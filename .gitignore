@@ -1,0 +1,90 @@
+﻿# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+[Dd]ebug/
+[Rr]elease/
+*_i.c
+*_p.c
+*.ilk
+#*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.vspscc
+.builds
+*.dotCover
+ 
+# Visual Studio profiler
+*.psess
+*.vsp
+.vs
+ 
+# ReSharper is a .NET coding add-in
+_ReSharper*
+ 
+# Installshield output folder
+[Ee]xpress
+ 
+# Click-Once directory
+publish
+ 
+# Others
+#[Bb]in
+sql
+TestResults
+*.Cache
+ClientBin
+stylecop.*
+~$*
+*.dbmdl
+Backup*/
+UpgradeLog*.XML
+
+ExportedObj/
+obj/
+*.svd
+ 
+# ============ #
+# OS generated #
+# ============ #
+Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+# Mac crap
+.DS_Store
+.DS_Store?
+
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Library/
+*.unityproj
+*.booproj
+*.csproj
+*.sln
+*.userprefs
+metadata
+CurrentLayout
+
+*.ide-wal
+.idea
+Builds
+Logs
+UserSettings
+
+.utmp
+AGENTS.md
