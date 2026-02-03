@@ -10,7 +10,8 @@ public class GameController : MonoBehaviour
 	[SerializeField] private IntVariable score, moves;
 
 	[SerializeField] private CameraScaler cameraScaler;
-	[SerializeField] private BoardClicker boardClicker;
+	[SerializeField] private BoardScaler boardScaler;
+	[SerializeField] private RenderTextureClicker renderTextureClicker;
 
 	private Board<PlayableObject> _board;
 	private PlayableObjectsPool _pool;
@@ -38,16 +39,16 @@ public class GameController : MonoBehaviour
 	private void OnEnable()
 	{
 		onReplay.OnEvent += OnReplayOnEvent;
-		boardClicker.OnCellClick += BoardClickerOnCellClick;
+		renderTextureClicker.OnCellClick += BoardScalerOnCellClick;
 	}
 
 	private void OnDisable()
 	{
 		onReplay.OnEvent -= OnReplayOnEvent;
-		boardClicker.OnCellClick -= BoardClickerOnCellClick;
+		renderTextureClicker.OnCellClick -= BoardScalerOnCellClick;
 	}
 
-	private void BoardClickerOnCellClick(Vector2Int position)
+	private void BoardScalerOnCellClick(Vector2Int position)
 	{
 		if (SetGameState != GameState.WaitingForMovement) return;
 		if (!_board.InBounds(position)) return;
@@ -68,8 +69,8 @@ public class GameController : MonoBehaviour
 		{
 			case GameState.Setup:
 				cameraScaler.SetCameraSize(level.boardSize);
-				boardClicker.SetupBoard(level.boardSize);
-				_boardTransform = boardClicker.transform;
+				boardScaler.SetupBoard(level.boardSize);
+				_boardTransform = boardScaler.transform;
 				_board = new Board<PlayableObject>(level.boardSize);
 				_pool = new PlayableObjectsPool(level.playableObject, level.datas);
 				_pool.FillPool(_board.GetSize());

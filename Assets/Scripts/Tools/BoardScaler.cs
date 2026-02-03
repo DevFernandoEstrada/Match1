@@ -1,11 +1,7 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
-public class BoardClicker : MonoBehaviour, IPointerClickHandler
+public class BoardScaler : MonoBehaviour
 {
-	public event Action<Vector2Int> OnCellClick;
-
 	[SerializeField] private Grid grid;
 	[SerializeField] private BoxCollider2D boxCollider;
 	[SerializeField] private SpriteRenderer spriteRenderer;
@@ -18,12 +14,5 @@ public class BoardClicker : MonoBehaviour, IPointerClickHandler
 		spriteRenderer.size = boardSize;
 		spriteRenderer.transform.localPosition = boardSize * 0.5f;
 		transform.localPosition = -boardSize * 0.5f;
-	}
-
-	public void OnPointerClick(PointerEventData eventData)
-	{
-		Vector3 clickPosition = eventData.pointerCurrentRaycast.worldPosition;
-		Vector3Int cellPos = grid.WorldToCell(clickPosition);
-		OnCellClick?.Invoke(new Vector2Int(cellPos.x, cellPos.y));
 	}
 }
