@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69557008817f4d1ebadbb5723ab06bc5, type: 3}
   m_Name: Level
   m_EditorClassIdentifier: Assembly-CSharp::Level
-  boardSize: {x: 6, y: 5}
+  boardSize: {x: 5, y: 6}
   playableObject: {fileID: -1259073430982807773, guid: 49ceb0c7f999b4247abb1c370ea4b25a, type: 3}
   datas:
   - {fileID: 11400000, guid: a3f4f6551c446834a8ca2b9b81d4a868, type: 2}

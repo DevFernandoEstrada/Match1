@@ -58,6 +58,7 @@ public class GameController : MonoBehaviour
 
 	private void OnReplayOnEvent()
 	{
+		ClearBoard();
 		SetGameState = GameState.Init;
 	}
 
@@ -72,13 +73,13 @@ public class GameController : MonoBehaviour
 				_board = new Board<PlayableObject>(level.boardSize);
 				_pool = new PlayableObjectsPool(level.playableObject, level.datas);
 				_pool.FillPool(_board.GetSize());
-				FillBoard();
 				SetGameState = GameState.Init;
 				break;
 
 			case GameState.Init:
 				score.SetValue(0);
 				moves.SetValue(level.moves);
+				FillBoard();
 				SetGameState = GameState.WaitingForMovement;
 				break;
 
