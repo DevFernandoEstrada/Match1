@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Level
   m_EditorClassIdentifier: Assembly-CSharp::Level
   boardSize: {x: 6, y: 5}
-  playableObject: {fileID: 0}
-  datas: []
+  playableObject: {fileID: -1259073430982807773, guid: 49ceb0c7f999b4247abb1c370ea4b25a, type: 3}
+  datas:
+  - {fileID: 11400000, guid: a3f4f6551c446834a8ca2b9b81d4a868, type: 2}
+  - {fileID: 11400000, guid: 99516fdf3dfe1f743a7b03613f35fc8b, type: 2}
+  - {fileID: 11400000, guid: 120f3976c8413f04e9a0dc88fb2f873e, type: 2}
+  - {fileID: 11400000, guid: 9047842edf87ffd4eb09f9048e648c49, type: 2}
+  - {fileID: 11400000, guid: e22399e45994ac04dafa4ffb76ab715f, type: 2}
   moves: 5
   timeBetweenMoves: 1

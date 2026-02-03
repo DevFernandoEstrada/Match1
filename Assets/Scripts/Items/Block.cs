@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
+
 public class Block : PlayableObject
 {
 	public SpriteRenderer spriteRenderer;
 	
 	public override PlayableObject SetData(ItemData newData)
 	{
-		spriteRenderer = newData.spriteRenderer;
-		itemData = newData;
+		spriteRenderer.sprite = newData.sprite;
+		ItemData = newData;
 		return this;
 	}
 	public override PlayableObject SetParent(Transform parent)

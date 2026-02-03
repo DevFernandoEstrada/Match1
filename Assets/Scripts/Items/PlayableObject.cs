@@ -2,7 +2,7 @@
 
 public abstract class PlayableObject : MonoBehaviour
 {
-	protected ItemData itemData;
+	protected ItemData ItemData;
 
 	public abstract PlayableObject SetData(ItemData newData);
 	
@@ -12,5 +12,5 @@ public abstract class PlayableObject : MonoBehaviour
 	
 	public abstract PlayableObject SetActive(bool active);
 	
-	public bool Compare(PlayableObject other) => other.itemData == itemData;
+	public bool Compare(PlayableObject other) => other.ItemData == ItemData;
 }

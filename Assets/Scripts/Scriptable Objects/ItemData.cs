@@ -3,5 +3,5 @@
 [CreateAssetMenu(menuName = "Item Data")]
 public class ItemData : ScriptableObject
 {
-	public SpriteRenderer spriteRenderer;
+	public Sprite sprite;
 }

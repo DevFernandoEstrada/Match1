@@ -4,9 +4,9 @@ public class Board<T>
 {
 	private T[,] _grid;
 
-	public Board(int size)
+	public Board(Vector2Int size)
 	{
-		_grid = new T[size, size];
+		_grid = new T[size.x, size.y];
 	}
 	
 	public int GetWidth { get { return _grid.GetLength(0); } }
