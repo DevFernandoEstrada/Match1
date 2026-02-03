@@ -17,7 +17,7 @@ public class BoardClicker : MonoBehaviour, IPointerClickHandler
 		boxCollider.offset = boardSize * 0.5f;
 		spriteRenderer.size = boardSize;
 		spriteRenderer.transform.localPosition = boardSize * 0.5f;
-		transform.position = -boardSize * 0.5f;
+		transform.localPosition = -boardSize * 0.5f;
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
