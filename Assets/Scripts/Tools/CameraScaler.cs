@@ -3,6 +3,8 @@
 public class CameraScaler : MonoBehaviour
 {
 	[SerializeField] private float padding = 1f;
+	[SerializeField, Range(0f, 1f)] private float paddingThreshold = 0.75f;
+	
 	private Camera _cam;
 
 	private void Awake()
@@ -16,15 +18,21 @@ public class CameraScaler : MonoBehaviour
 		float gridHeight = boardSize.y;
 		float screenRatio = Screen.width / (float)Screen.height;
 		float targetRatio = gridWidth / gridHeight;
+		float baseOrthoSize;
 
 		if (screenRatio >= targetRatio)
 		{
-			_cam.orthographicSize = gridHeight * 0.5f + padding;
+			baseOrthoSize = gridHeight * 0.5f;
 		}
 		else
 		{
 			float differenceInSize = targetRatio / screenRatio;
-			_cam.orthographicSize = (gridHeight * 0.5f + padding) * differenceInSize;
+			baseOrthoSize = (gridHeight * 0.5f) * differenceInSize;
 		}
+
+		float cameraHeight = baseOrthoSize * 2f;
+		float relativeDiff = Mathf.Abs(cameraHeight - gridHeight) / gridHeight;
+		float appliedPadding = relativeDiff <= paddingThreshold ? padding : 0f;
+		_cam.orthographicSize = baseOrthoSize + appliedPadding;
 	}
 }
